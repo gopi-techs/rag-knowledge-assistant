@@ -1,5 +1,13 @@
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+
+
 
 def create_vector_store(chunks):
     embeddings = OpenAIEmbeddings()

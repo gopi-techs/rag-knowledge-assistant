@@ -1,2 +1,18 @@
 # Ignore environment variable files
 .env*    
+
+# Ignore FAISS index files
+faiss_index/
+*.faiss
+*.pkl
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment directories
+venv/
+env/
+rag_env/

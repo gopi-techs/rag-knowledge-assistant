@@ -5,13 +5,14 @@ retriever = get_retriever()
 llm = get_llm()
 
 def run_rag(query: str):
-    docs = retriever.get_relevant_documents(query)
+    docs = retriever.invoke(query)
 
     context = "\n\n".join([doc.page_content for doc in docs])
 
     prompt = f"""
-    Answer strictly from the context below.
-    If not found, say "I don't know".
+    Use the context below to answer the question.
+    If partial information is available, try to infer the best possible answer.
+    Only say "I don't know" if nothing relevant is found.
 
     Context:
     {context}
